@@ -5,7 +5,6 @@ import { ClerkProvider } from '@clerk/nextjs';
 import { ModalProvider } from '@/components/modal-provider';
 import { ToasterProvider } from '@/components/toaster-provider';
 import { CrispProvider } from '@/components/crisp-provider';
-import { PageProps } from '@/.next/types/app/layout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,9 +17,11 @@ export default function RootLayout({
   children
 }: {
   children: React.ReactNode
-}, pageProps: PageProps ) {
+} ) {
+  const publishableKey= process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  
   return (
-    <ClerkProvider {...pageProps}  publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY} >
+    <ClerkProvider  publishableKey={publishableKey} >
       <html lang="en">
         <CrispProvider />
         <body className={inter.className}>
