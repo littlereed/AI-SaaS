@@ -1,6 +1,7 @@
 import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 import { Configuration, OpenAIApi } from "openai";
+
 import { increaseApiLimit, checkApiLimit } from "@/lib/api-limit";
 import { checkSubscription } from "@/lib/subcription";
 
@@ -9,6 +10,7 @@ const configuration = new Configuration({
 });
 
 const openai = new OpenAIApi(configuration);
+
 
 export async function POST(
   req: Request
@@ -45,8 +47,9 @@ export async function POST(
     if(!isPro) {
       await increaseApiLimit();
     };
-   
+    console.log(response.data.choices[0].message)
     return NextResponse.json(response.data.choices[0].message);
+
   } catch (error) {
     console.log('[CONVERSATION_ERROR]', error);
     return new NextResponse("Internal Error", { status: 500 });
