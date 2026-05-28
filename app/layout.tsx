@@ -14,14 +14,14 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children
+  children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
 } ) {
-
+  
   return (
     <ClerkProvider   >
-      <html lang="en">
+      <html lang='en'>
         <CrispProvider />
         <body className={inter.className}>
           <ModalProvider />
