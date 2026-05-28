@@ -43,9 +43,9 @@ Users can:
 
 ![home](./screenshots/home.png)
 
-### AI Result New
+### AI Result 
 
-![ai-result-new](./screenshots/ai-result-new.png)
+![AI Result](./screenshots/ai-result-new.png)
 
 
 ## Known Issues
