@@ -45,7 +45,7 @@ Users can:
 
 ### AI Result
 
-![ai-result](./screenshots/ai-result.png)
+![aiResult](./screenshots/aiResult.png)
 
 
 ## Known Issues
